@@ -39,6 +39,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [loadingResults, setLoadingResults] = useState<boolean>(false)
 
   const [results, setResults] = useState<any>([])
+  const [resultsPerPage, setResultsPerPage] = useState<number>(0)
+  const [totalPages, setTotalPages] = useState<number>(0)
+  const [totalResultsCount, setTotalResultsCount] = useState<number>(0)
 
   const searchLocationSearch = async () => {
     console.log(searchOptions)
@@ -46,6 +49,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     try {
       const response = await axios.request(searchOptions);
       console.log(response.data.totalResultCount);
+      setResults(response.data.results)
+      setResultsPerPage(response.data.resultsPerPage)
+      setTotalPages(response.data.totalPages)
+      setTotalResultsCount(response.data.totalResultCount)
     } catch (error) {
       console.error(error);
     }

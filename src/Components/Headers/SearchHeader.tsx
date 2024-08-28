@@ -21,7 +21,9 @@ const SearchHeader = () => {
             returnKeyType="done"
             onSubmitEditing={() => {searchLocationSearch()}}
           />
-          <Text style={styles.searchButton}>Search</Text>
+          <TouchableOpacity onPress={() => {searchLocationSearch()}}>
+            <Text style={styles.searchButton}>Search</Text>
+          </TouchableOpacity>
         </View>
         <TouchableOpacity>
           <Sliders style={styles.settingsIcon} height={24} width={24} color={'blue'} strokeWidth={2}/>
@@ -35,8 +37,8 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     padding: 12,
-    borderBottomWidth: 2,
-    borderBottomColor: 'grey'
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgrey'
   },
   containerFormat: {
     display: 'flex',
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
   searchButton: {
     backgroundColor: '#1969ff',
     paddingHorizontal: 8,
-    paddingVertical: 4,
+    paddingVertical: 6,
     borderRadius: 12,
     overflow: 'hidden',
     color: 'white',
