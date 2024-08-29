@@ -26,9 +26,6 @@ const PrimarySummary: React.FC<PrimarySummaryProps> = ({property}) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 8,
-    paddingHorizontal: 8,
-    backgroundColor: '#d4d4d4',
   },
   propertyAddress: {
 
